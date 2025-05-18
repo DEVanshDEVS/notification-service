@@ -46,24 +46,18 @@ In-App
 
 🛠️ Setup & Installation
 1. Clone the repository
-bash
-Copy
-Edit
-git clone https://github.com/DEVanshDEVS/notification-service.git
-cd notification-service
+bash:
+    git clone https://github.com/DEVanshDEVS/notification-service.git
+    cd notification-service
+
 2. Install dependencies
-bash
-Copy
-Edit
-npm install
+bash:
+    npm install
+
 3. Configure environment variables
 Create a .env file in the root directory:
-
-env
-Copy
-Edit
-PORT=3000
-MONGODB_URI=mongodb://localhost:27017/notification_service
+    PORT=3000
+    MONGODB_URI=mongodb://localhost:27017/notification_service
 
 # Email (Gmail SMTP example)
 SMTP_HOST=smtp.gmail.com
@@ -75,11 +69,10 @@ SMTP_PASS=your_gmail_app_password
 TWILIO_ACCOUNT_SID=your_twilio_sid
 TWILIO_AUTH_TOKEN=your_twilio_auth_token
 TWILIO_PHONE_NUMBER=your_twilio_number
+
 4. Start the server
-bash
-Copy
-Edit
-npm start
+bash:
+    npm start
 The server will run at:
 👉 http://localhost:3000
 
@@ -87,23 +80,19 @@ The server will run at:
 ➤ Send a Notification
 POST /notifications
 
-json
-Copy
-Edit
-{
-  "userId": "USER_ID_HERE",
-  "type": "in-app", // or "email" or "sms"
-  "message": "This is a test notification!"
-}
+json:
+    {
+      "userId": "USER_ID_HERE",
+      "type": "in-app", // or "email" or "sms"
+      "message": "This is a test notification!"
+    }
 ➤ Get All Notifications for a User
 GET /notifications/users/:id/notifications
 
 Optional Filter by Type:
 
-ruby
-Copy
-Edit
-/notifications/users/:id/notifications?type=in-app
+ruby:
+    /notifications/users/:id/notifications?type=in-app
 ➤ Mark In-App Notification as Read
 PATCH /notifications/:notificationId/read
 
@@ -111,32 +100,28 @@ PATCH /notifications/:notificationId/read
 Ensure user documents exist in MongoDB. Notifications are sent to these users.
 
 Sample User Document
-json
-Copy
-Edit
-{
-  "name": "Receiver",
-  "email": "receiver@example.com",
-  "phone": "+1234567890"
-}
+json:
+    {
+      "name": "Receiver",
+      "email": "receiver@example.com",
+      "phone": "+1234567890"
+    }
 🧪 Example Requests
 ✅ Send In-App Notification
-bash
-Copy
-Edit
-curl -X POST http://localhost:3000/notifications \
-  -H "Content-Type: application/json" \
-  -d '{"userId":"USER_ID_HERE","type":"in-app","message":"Hello from in-app!"}'
+bash:
+    curl -X POST http://localhost:3000/notifications \
+      -H "Content-Type: application/json" \
+      -d '{"userId":"USER_ID_HERE","type":"in-app","message":"Hello from in-app!"}'
+
 📥 Get All In-App Notifications
-bash
-Copy
-Edit
-curl http://localhost:3000/notifications/users/USER_ID_HERE/notifications?type=in-app
+bash:
+    curl http://localhost:3000/notifications/users/USER_ID_HERE/notifications?type=in-app
+
 ✅ Mark Notification as Read
-bash
-Copy
-Edit
-curl -X PATCH http://localhost:3000/notifications/NOTIFICATION_ID/read
+bash:
+    curl -X PATCH http://localhost:3000/notifications/NOTIFICATION_ID/read
+
+
 📝 Notes
 ❌ Never commit your .env file to a public repository.
 
