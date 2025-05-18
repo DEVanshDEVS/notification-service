@@ -20,6 +20,25 @@ In-App
 
 🗄️ Persistent storage using MongoDB
 
+## 🖼️ Screenshots
+
+📌 **Email Notification Sample**
+
+![Email Notification Sample](https://raw.githubusercontent.com/DEVanshDEVS/notification-service/main/screenshots/emailNotiExample.jpg)
+
+📌 **Sending Email Notification via Postman**
+
+![Email Notification via Postman](https://raw.githubusercontent.com/DEVanshDEVS/notification-service/main/screenshots/emailNotification.png)
+
+📌 **Fetching All Notifications via Postman**
+
+![Fetch All Notifications](https://raw.githubusercontent.com/DEVanshDEVS/notification-service/main/screenshots/fetchAllNotification.png)
+
+📌 **In-App Notification via Postman**
+
+![In-App Notification via Postman](https://raw.githubusercontent.com/DEVanshDEVS/notification-service/main/screenshots/in-appNotification.png)
+
+
 🔗 Easily integrable with any frontend or backend
 
 🛠️ Setup & Installation
@@ -121,25 +140,6 @@ curl -X PATCH http://localhost:3000/notifications/NOTIFICATION_ID/read
 📧 Gmail SMTP requires an App Password (not your login password).
 
 📱 Twilio requires an active account and a verified sender number.
-
-## 🖼️ Screenshots
-
-📌 **Email Notification Sample**
-
-![Email Notification Sample](./screenshots/emailNotiExample.png)
-
-📌 **Sending Email Notification via Postman**
-
-![Email Notification via Postman](./screenshots/emailNotification.png)
-
-📌 **Fetching All Notifications via Postman**
-
-![Fetch All Notifications](./screenshots/fetchAllNotification.png)
-
-📌 **In-App Notification via Postman**
-
-![In-App Notification via Postman](./screenshots/in-appNotification.png)
-
 
 
 📄 License
