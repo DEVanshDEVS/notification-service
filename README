@@ -1,0 +1,177 @@
+# 📬 Notification Service
+
+A **Node.js REST API** to send notifications via **Email**, **SMS**, and **In-App** channels.
+
+> Built with **Express**, **MongoDB**, **Twilio**, and **SMTP (Gmail)**.
+
+---
+
+## 🚀 Features
+
+* ✅ Send notifications via:
+
+  * **Email**
+  * **SMS**
+  * **In-App**
+* 📥 Fetch notifications for a user (with optional filtering by type)
+* ✅ Mark **In-App** notifications as read
+* 🔌 RESTful API with clean, modular code
+* 🟔️ Persistent storage using MongoDB
+* 🔗 Easily integrable with any frontend or backend
+
+---
+
+## 🛠️ Setup & Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/DEVanshDEVS/notification-service.git
+cd notification-service
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env` file in the root directory:
+
+```env
+PORT=3000
+MONGODB_URI=mongodb://localhost:27017/notification_service
+
+# Email (Gmail SMTP example)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your_email@gmail.com
+SMTP_PASS=your_gmail_app_password
+
+# Twilio
+TWILIO_ACCOUNT_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_auth_token
+TWILIO_PHONE_NUMBER=your_twilio_number
+```
+
+### 4. Start the server
+
+```bash
+npm start
+```
+
+The server will run at:
+👉 **[http://localhost:3000](http://localhost:3000)**
+
+---
+
+## 📚 API Endpoints
+
+### ➔ Send a Notification
+
+`POST /notifications`
+
+```json
+{
+  "userId": "USER_ID_HERE",
+  "type": "in-app", // or "email" or "sms"
+  "message": "This is a test notification!"
+}
+```
+
+---
+
+### ➔ Get All Notifications for a User
+
+`GET /notifications/users/:id/notifications`
+
+**Optional Filter by Type:**
+
+```
+/notifications/users/:id/notifications?type=in-app
+```
+
+---
+
+### ➔ Mark In-App Notification as Read
+
+`PATCH /notifications/:notificationId/read`
+
+---
+
+## 👤 User Management
+
+> Ensure user documents exist in MongoDB. Notifications are sent to these users.
+
+### Sample User Document
+
+```json
+{
+  "name": "Receiver",
+  "email": "receiver@example.com",
+  "phone": "+1234567890"
+}
+```
+
+---
+
+## 🧪 Example Requests
+
+### ✅ Send In-App Notification
+
+```bash
+curl -X POST http://localhost:3000/notifications \
+  -H "Content-Type: application/json" \
+  -d '{"userId":"USER_ID_HERE","type":"in-app","message":"Hello from in-app!"}'
+```
+
+### 📥 Get All In-App Notifications
+
+```bash
+curl http://localhost:3000/notifications/users/USER_ID_HERE/notifications?type=in-app
+```
+
+### ✅ Mark Notification as Read
+
+```bash
+curl -X PATCH http://localhost:3000/notifications/NOTIFICATION_ID/read
+```
+
+---
+
+## 📝 Notes
+
+* ❌ Never commit your `.env` file to a public repository.
+* 📧 Gmail SMTP requires an **App Password** (not your login password).
+* 📱 Twilio requires an active account and a **verified sender number**.
+
+---
+
+## 🖼️ Screenshots
+
+> 📌 Insert your screenshots below (e.g., Postman tests, database UI, console output, etc.)
+
+**Example: Sending a Notification via Postman**
+
+![Send Notification Screenshot](./screenshots/send-notification.png)
+
+**Example: Notification Document in MongoDB**
+
+![MongoDB Notification Entry](./screenshots/mongodb-notification.png)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+See the [LICENSE](./LICENSE) file for more details.
+
+---
+
+## 🙌 Contributing
+
+Found a bug? Have a feature request?
+Open an issue or submit a pull request!
+**Happy Notifying!** 🛎️
