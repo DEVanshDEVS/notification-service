@@ -1,0 +1,30 @@
+{
+  "name": "notification-service",
+  "version": "1.0.0",
+  "description": "A simple notification service to send Email, SMS, and In-App notifications.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "notification",
+    "express",
+    "sms",
+    "email",
+    "api"
+  ],
+  "author": "Devansh Dobhal",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.15.0",
+    "nodemailer": "^7.0.3",
+    "twilio": "^5.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
