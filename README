@@ -22,6 +22,8 @@ In-App
 
 ## 🖼️ Screenshots
 
+> ⚠️ **If the images below do not display properly, please check the `screenshots` folder in this repository to view sample screenshots directly.**
+
 📌 **Email Notification Sample**
 
 ![Email Notification Sample](https://github.com/DEVanshDEVS/notification-service/blob/main/screenshots/emailNotiExample.jpg?raw=true)
@@ -37,6 +39,7 @@ In-App
 📌 **In-App Notification via Postman**
 
 ![In-App Notification via Postman](https://raw.githubusercontent.com/DEVanshDEVS/notification-service/main/screenshots/in-appNotification.png)
+
 
 
 🔗 Easily integrable with any frontend or backend
